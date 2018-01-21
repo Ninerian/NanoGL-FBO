@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":
-      "budo --dir src  src/index.js:js/bundle.js -t glslify -v --live | garnish",
+    "start": "budo --dir src  src/index.js:js/bundle.js -t glslify -v --live | garnish",
     "build": "browserify -t glslify index.js | uglifyjs -cm > js/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "browserify": {
-    "transform": ["glslify"]
+    "transform": [
+      "glslify"
+    ]
   },
   "dependencies": {
     "glslify": "6.1.0",
     "nanogl": "1.0.0",
+    "nanogl-camera": "^0.1.4",
+    "nanogl-node": "^0.1.2",
     "nanogl-primitives-2d": "0.1.1",
     "nanogl-renderer": "0.1.3"
   },
