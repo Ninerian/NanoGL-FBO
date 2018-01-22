@@ -4,6 +4,7 @@ attribute vec2 aTexCoord;
 varying vec2 vTexCoord;
 
 void main( void ){
-  gl_Position = vec4( aPosition, 0.0, 1.0 );
+  float ratio = aPosition.x / aPosition.y;
+  gl_Position = vec4( aPosition, 0.5, 1.0 );
   vTexCoord = aTexCoord;
 }
