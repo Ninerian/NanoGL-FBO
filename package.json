@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":
-      "budo --dir src  src/index.js:js/bundle.js -t glslify -v --live | garnish",
-    "build": "browserify -t glslify index.js | uglifyjs -cm > js/bundle.js"
+    "start": "budo --dir src  src/index.js:js/bundle.js -t glslify -v --live | garnish",
+    "build": "browserify -t glslify src/index.js | uglifyjs -cm > dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "browserify": {
-    "transform": ["glslify"]
+    "transform": [
+      "glslify"
+    ]
   },
   "dependencies": {
     "glslify": "6.1.0",
@@ -24,6 +25,7 @@
     "budo": "10.0.4",
     "dat-gui": "0.5.0",
     "domready": "1.0.8",
-    "garnish": "5.2.0"
+    "garnish": "5.2.0",
+    "uglify-js": "3.3.7"
   }
 }
